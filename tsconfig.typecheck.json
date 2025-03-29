@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "checkJs": false,
+    "customConditions": ["types", "api"]
+  },
+  "exclude": [],
+  "extends": "./tsconfig.json",
+  "files": [
+    "typings/@types/node/process.d.ts",
+    "typings/chai/index.d.ts",
+    "typings/typescript/lib.es5.d.ts",
+    "vitest-env.d.mts"
+  ],
+  "include": [
+    "__fixtures__/**/*",
+    "__tests__/**/*",
+    "src/**/**.mts",
+    "typings/**/*",
+    "vitest-env.d.mts"
+  ]
+}
