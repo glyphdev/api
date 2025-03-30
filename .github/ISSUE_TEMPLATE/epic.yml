@@ -1,0 +1,19 @@
+name: Epic
+description: Define an overarching project goal or initiative
+title: 🏔️ <title>
+type: epic
+labels:
+  - type:epic
+body:
+  - type: textarea
+    id: goals
+    attributes:
+      label: Goals
+      description: Describe the goal for this epic.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: List links to materials that may be helpful while completing this epic.
