@@ -79,6 +79,21 @@ body:
       required: true
   - type: markdown
     attributes:
+      value: '## Risks'
+  - type: textarea
+    id: potential-risks
+    attributes:
+      label: Potential Risks
+      description: |
+        Potential problems or uncertainties that could impact the completion of this epic (e.g.
+        technical issues, dependencies, resource constraints, changing requirements).
+  - type: textarea
+    id: risk-mitigation
+    attributes:
+      label: Risk Mitigation
+      description: Strategies to address identified risks.
+  - type: markdown
+    attributes:
       value: '## Resources'
   - type: textarea
     id: tools-and-technology
