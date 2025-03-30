@@ -1,0 +1,48 @@
+name: Task
+description: Add a project task
+title: 🔨 <title>
+type: task
+labels:
+  - type:task
+body:
+  - type: markdown
+    attributes:
+      value: '## Overview'
+  - id: proposal
+    type: textarea
+    attributes:
+      label: Proposed work
+      description: |
+        High-level description of what needs to be done, and any necessary additional context.
+    validations:
+      required: true
+  - id: todo
+    type: textarea
+    attributes:
+      label: Todo
+      description: What must be done to complete this task.
+      value: |
+        - [ ]
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: '## Resources'
+  - id: related
+    type: textarea
+    attributes:
+      label: Related issues
+      description: Related issues and pull requests.
+      placeholder: |
+        - #<issue-number>
+        - #<pr-number>
+  - type: textarea
+    id: tools-and-technology
+    attributes:
+      label: Tools & Technology
+      description: Tools or technology that may be helpful while completing this task.
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Links to materials that may be helpful while completing this task.
