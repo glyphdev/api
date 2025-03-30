@@ -1,0 +1,58 @@
+name: User story
+description: Suggest a feature or improvement from the viewpoint of a user
+title: 🎭 As a <user role>, I want <desired action>, so that [benefit]
+type: story
+labels:
+  - type:story
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Requirements
+        *Functional and non-functional requirements related to this story.*
+  - type: textarea
+    id: functional
+    attributes:
+      label: Functional Requirements
+      description: What the product must do to meet user needs.
+      value: |
+        -
+    validations:
+      required: true
+  - type: textarea
+    id: non-functional
+    attributes:
+      label: Non-Functional Requirements
+      description: How the product must behave to meet user needs.
+      value: |
+        -
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of Scope
+      description: List items that are specifically excluded from this feature or project.
+  - type: markdown
+    attributes:
+      value: |
+        ## Acceptance Criteria
+        *Overall acceptance criteria for the feature.*
+  - type: textarea
+    id: scenarios
+    attributes:
+      label: Scenarios
+      description: |
+        - Given: Initial context or state of the system before any action is taken
+        - When: The action or event that triggers a change or response
+        - And: Additional action or event context, if any
+        - Then: The expected outcome or set of observable consequences resulting from the action
+      value: |
+        #### **Scenario**: <title>
+
+        - **`Given`**
+        - **`When`**
+        - **`And`**
+        - **`Then`**
+    validations:
+      required: true
