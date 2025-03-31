@@ -15,13 +15,13 @@ labels:
 
 ### Functional Requirements
 
-> *What the product must do to meet user needs.*
+> *What the product must do.*
 
 -
 
 ### Non-Functional Requirements
 
-> *How the product must behave to meet user needs.*
+> *How the product must behave.*
 
 -
 

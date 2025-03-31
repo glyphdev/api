@@ -66,6 +66,12 @@ labels:
 
 -
 
+### Non-Functional Requirements
+
+> *How the product must behave.*
+
+-
+
 ### Out of Scope
 
 > *Features that are specifically excluded from this epic.*
@@ -87,7 +93,15 @@ labels:
 
 -
 
-## References
+## Resources
+
+### Tools & Technology
+
+> *Tools or technology that may be helpful while completing this epic.*
+
+-
+
+### References
 
 > *Reference material that may be helpful while completing this epic.*
 
