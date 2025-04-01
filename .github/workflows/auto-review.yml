@@ -43,7 +43,17 @@ jobs:
           private-key: ${{ secrets.BOT_PRIVATE_KEY }}
       - id: github-token
         name: Set env.GITHUB_TOKEN
-        run: echo "GITHUB_TOKEN=${{ steps.bot-token.outputs.token }}" >>$GITHUB_ENV
+        run: |
+          GITHUB_TOKEN=
+
+          if [[ $GITHUB_ACTOR == '${{ vars.BOT_NAME }}' ]]; then
+            # bots cannot approve their own pull request.
+            GITHUB_TOKEN=${{ secrets.GH_REPO_TOKEN }}
+          else
+            GITHUB_TOKEN=${{ steps.bot-token.outputs.token }}
+          fi
+
+          echo "GITHUB_TOKEN=$GITHUB_TOKEN" >>$GITHUB_ENV
       - id: gh-auth
         name: Check gh authentication state
         run: gh auth status
