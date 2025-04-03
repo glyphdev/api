@@ -1952,7 +1952,7 @@ __metadata:
     "@tsconfig/strictest": "npm:2.0.5"
     "@types/chai": "npm:5.2.1"
     "@types/is-ci": "npm:3.0.4"
-    "@types/node": "npm:22.13.17"
+    "@types/node": "npm:22.14.0"
     "@types/node-notifier": "npm:8.0.5"
     "@typescript-eslint/eslint-plugin": "npm:8.28.0"
     "@typescript-eslint/parser": "npm:8.28.0"
@@ -3034,7 +3034,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:22.13.17, @types/node@npm:^22.0.0":
+"@types/node@npm:*, @types/node@npm:^22.0.0":
   version: 22.13.17
   resolution: "@types/node@npm:22.13.17"
   dependencies:
@@ -3049,6 +3049,15 @@ __metadata:
   dependencies:
     undici-types: "npm:~5.25.1"
   checksum: 10/cdfe0a2d90005323bbaf8fa4002607af98d49016c81898cd7f574d9ec6fc980580ea1b97f7b6ecaa8614be8004cd03898766e99e1869428ba6ed3bcd66a15354
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:22.14.0":
+  version: 22.14.0
+  resolution: "@types/node@npm:22.14.0"
+  dependencies:
+    undici-types: "npm:~6.21.0"
+  checksum: 10/d0669a8a37a18532c886ccfa51eb3fe1e46088deb4d3d27ebcd5d7d68bd6343ad1c7a3fcb85164780a57629359c33a6c917ecff748ea232bceac7692acc96537
   languageName: node
   linkType: hard
 
@@ -11822,6 +11831,13 @@ __metadata:
   version: 6.20.0
   resolution: "undici-types@npm:6.20.0"
   checksum: 10/583ac7bbf4ff69931d3985f4762cde2690bb607844c16a5e2fbb92ed312fe4fa1b365e953032d469fa28ba8b224e88a595f0b10a449332f83fa77c695e567dbe
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.21.0":
+  version: 6.21.0
+  resolution: "undici-types@npm:6.21.0"
+  checksum: 10/ec8f41aa4359d50f9b59fa61fe3efce3477cc681908c8f84354d8567bb3701fafdddf36ef6bff307024d3feb42c837cf6f670314ba37fc8145e219560e473d14
   languageName: node
   linkType: hard
 
