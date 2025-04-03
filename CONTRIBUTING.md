@@ -104,14 +104,18 @@ Follow the steps below to setup your local development environment:
 
 | name                |
 | ------------------- |
-| `GITHUB_TOKEN`      |
+| `GITHUB_ENV`        |
 | `HOMEBREW_BREWFILE` |
+| `HOST`              |
+| `NEST_DEBUG`        |
+| `NODE_ENV`          |
 | `NODE_NO_WARNINGS`  |
+| `PORT`              |
 | `ZSH_DOTENV_FILE`   |
 
 #### GitHub Actions
 
-Variables are prefixed by `secrets.` in [workflow](.github/workflows/) files.
+Secrets are prefixed by `secrets.` in [workflow](.github/workflows/) files.
 
 ### Git Config
 

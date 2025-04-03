@@ -3,13 +3,14 @@ commitlintrc
 dedupe
 devlop
 docast
+fastify
 fbca
 ggshield
 gpgsign
 hmarr
 jchen
 kaisugi
-kronk
+ksort
 nvmrc
 remarkrc
 sarif

@@ -3,7 +3,7 @@
     "allowImportingTsExtensions": false,
     "allowJs": false,
     "checkJs": false,
-    "customConditions": ["api", "production", "import", "node"],
+    "customConditions": ["production", "import", "node"],
     "declarationMap": false,
     "noEmitOnError": true,
     "outDir": "dist",

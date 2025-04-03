@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`unit:models/Config > constructor > should throw if config is invalid 1`] = `
+[
+  ValidationError {
+    "children": [],
+    "constraints": {
+      "isIn": "NODE_ENV must be one of the following values: development, test, production",
+      "isNotEmpty": "NODE_ENV should not be empty",
+    },
+    "property": "NODE_ENV",
+    "value": undefined,
+  },
+  ValidationError {
+    "children": [],
+    "constraints": {
+      "isNotEmpty": "PORT should not be empty",
+      "isString": "PORT must be a string",
+    },
+    "property": "PORT",
+    "value": undefined,
+  },
+]
+`;

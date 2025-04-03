@@ -5,9 +5,11 @@
  */
 
 import chaiEach from '#tests/plugins/chai-each'
+import chaiHttp from 'chai-http'
 import { chai } from 'vitest'
 
 /**
  * initialize chai plugins.
  */
 chai.use(chaiEach)
+chai.use(chaiHttp)
