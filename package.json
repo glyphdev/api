@@ -13,7 +13,9 @@
   "files": [
     "CHANGELOG.md",
     "CONTRIBUTING.md",
+    "Dockerfile",
     "README.md",
+    "docker-compose.yml",
     "src"
   ],
   "exports": {
@@ -33,6 +35,7 @@
   },
   "scripts": {
     "build": "yarn clean:build; tsc -p tsconfig.build.json --noEmit false",
+    "build:image": "docker build --build-arg NEST_DEBUG=1 --tag ghcr.io/glyphdev/api:build .",
     "check:ci": "yarn dedupe --check && yarn check:format && yarn check:lint && yarn check:spelling && yarn typecheck && yarn test:cov && yarn pack && yarn clean:pack",
     "check:format": "dprint check --incremental=false",
     "check:lint": "eslint --exit-on-fatal-error --max-warnings 0 .",
@@ -44,6 +47,7 @@
     "clean:pack": "trash \"./*.tgz\"",
     "clean:test": "trash ./coverage && trash __tests__/reports",
     "commitlint": "commitlint -V",
+    "docker:prune": "docker system prune -f",
     "fix:cg": "yarn fix:format && yarn fix:lint",
     "fix:dedupe": "yarn dedupe --strategy=highest",
     "fix:format": "dprint fmt",
@@ -53,8 +57,10 @@
     "prepack": "toggle-scripts -postinstall",
     "release": "bash ./scripts/release.sh",
     "remark": "remark .",
-    "serve": "cross-env NODE_ENV=production PORT=9000 bun run ./src/main.mts",
-    "serve:watch": "cross-env NODE_ENV=development PORT=8080 bun run --watch ./src/main.mts",
+    "serve": "cross-env PORT=9000 bun run ./src/main.mts",
+    "serve:watch": "bun run --watch ./src/main.mts",
+    "start": "docker run --rm --env NEST_DEBUG=1 -itp 4000:4000 ghcr.io/glyphdev/api:build",
+    "start:dev": "cross-env PORT=8080 docker compose up",
     "test": "yarn clean:build; cross-env NODE_OPTIONS=\"--experimental-strip-types --experimental-transform-types\" vitest run",
     "test:cov": "yarn test --coverage",
     "test:cov:reports": "yarn test:cov --merge-reports --mode=reports",
@@ -70,8 +76,11 @@
     "@nestjs/core": "11.0.13",
     "@nestjs/platform-fastify": "11.0.13",
     "@nestjs/swagger": "11.1.0",
+    "bun": "1.2.8",
     "class-validator": "0.14.1",
-    "fastify": "5.2.2"
+    "fastify": "5.2.2",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2"
   },
   "devDependencies": {
     "@commitlint/cli": "19.8.0",
@@ -92,7 +101,6 @@
     "@typescript-eslint/parser": "8.29.0",
     "@vates/toggle-scripts": "1.0.0",
     "@vitest/coverage-v8": "3.0.9",
-    "bun": "1.2.8",
     "chai": "5.2.0",
     "chai-http": "5.1.1",
     "cross-env": "7.0.3",

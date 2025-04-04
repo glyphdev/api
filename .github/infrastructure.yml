@@ -26,6 +26,7 @@ branches:
           - context: auto-review
           - context: changelog
           - context: commitlint
+          - context: container
           - context: dependabot-dedupe
           - context: format
           - context: lint

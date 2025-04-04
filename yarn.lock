@@ -1988,6 +1988,7 @@ __metadata:
     jsonc-eslint-parser: "npm:2.4.0"
     node-notifier: "npm:10.0.1"
     prettier: "npm:3.5.3"
+    reflect-metadata: "npm:0.2.2"
     remark: "npm:15.0.1"
     remark-cli: "npm:12.0.1"
     remark-directive: "npm:4.0.0"
@@ -2058,6 +2059,7 @@ __metadata:
     remark-lint-table-pipes: "npm:5.0.1"
     remark-lint-unordered-list-marker-style: "npm:4.0.1"
     remark-validate-links: "npm:13.1.0"
+    rxjs: "npm:7.8.2"
     sh-syntax: "npm:0.4.2"
     trash-cli: "npm:6.0.0"
     ts-dedent: "npm:2.2.0"
@@ -9478,6 +9480,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"reflect-metadata@npm:0.2.2":
+  version: 0.2.2
+  resolution: "reflect-metadata@npm:0.2.2"
+  checksum: 10/1c93f9ac790fea1c852fde80c91b2760420069f4862f28e6fae0c00c6937a56508716b0ed2419ab02869dd488d123c4ab92d062ae84e8739ea7417fae10c4745
+  languageName: node
+  linkType: hard
+
 "reflect.getprototypeof@npm:^1.0.6, reflect.getprototypeof@npm:^1.0.9":
   version: 1.0.10
   resolution: "reflect.getprototypeof@npm:1.0.10"
@@ -10711,6 +10720,15 @@ __metadata:
   dependencies:
     tslib: "npm:^2.1.0"
   checksum: 10/b10cac1a5258f885e9dd1b70d23c34daeb21b61222ee735d2ec40a8685bdca40429000703a44f0e638c27a684ac139e1c37e835d2a0dc16f6fc061a138ae3abb
+  languageName: node
+  linkType: hard
+
+"rxjs@npm:7.8.2":
+  version: 7.8.2
+  resolution: "rxjs@npm:7.8.2"
+  dependencies:
+    tslib: "npm:^2.1.0"
+  checksum: 10/03dff09191356b2b87d94fbc1e97c4e9eb3c09d4452399dddd451b09c2f1ba8d56925a40af114282d7bc0c6fe7514a2236ca09f903cf70e4bbf156650dddb49d
   languageName: node
   linkType: hard
 

@@ -6,7 +6,7 @@
 import {
   IsIn,
   IsNotEmpty,
-  IsOptional,
+  IsNumber,
   IsString,
   validateSync as validate,
   type ValidationError
@@ -27,8 +27,19 @@ class Config {
    * @member {string} HOST
    */
   @IsString()
-  @IsOptional()
-  public HOST: string
+  @IsNotEmpty()
+  public HOST!: string
+
+  /**
+   * Name for {@linkcode HOST}.
+   *
+   * @public
+   * @instance
+   * @member {string} HOSTNAME
+   */
+  @IsString()
+  @IsNotEmpty()
+  public HOSTNAME!: string
 
   /**
    * The type of environment the Node.js process is running in.
@@ -38,7 +49,6 @@ class Config {
    * @member {string} NODE_ENV
    */
   @IsIn(['development', 'test', 'production'])
-  @IsNotEmpty()
   public NODE_ENV!: string
 
   /**
@@ -46,20 +56,25 @@ class Config {
    *
    * @public
    * @instance
-   * @member {string} PORT
+   * @member {number} PORT
    */
-  @IsString()
-  @IsNotEmpty()
-  public PORT!: string
+  @IsNumber({ allowInfinity: false, allowNaN: false, maxDecimalPlaces: 0 })
+  public PORT!: number
 
   /**
    * Create a new configuration environment.
    *
-   * @param {NodeJS.Dict<string>} env
+   * @param {NodeJS.Dict<string | null | undefined>} env
    *  Environment variables object
+   * @throws {AggregateError}
    */
-  constructor(env: NodeJS.Dict<string>) {
+  constructor(env: NodeJS.Dict<string | null | undefined>) {
     Object.assign(this, env)
+
+    this.HOST = (this.HOST || '127.0.0.1').trim()
+    this.HOSTNAME = (this.HOSTNAME || 'localhost').trim()
+    this.NODE_ENV = (this.NODE_ENV || 'development').trim()
+    this.PORT = +(env['PORT'] || '8080').trim()
 
     /**
      * Validation errors.
@@ -79,8 +94,6 @@ class Config {
     if (errors.length) {
       throw new AggregateError(errors, 'Invalid config')
     }
-
-    this.HOST ||= 'localhost'
   }
 }
 

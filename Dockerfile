@@ -1,29 +1,43 @@
 # DOCKERFILE
 # https://docs.docker.com/engine/reference/builder
+# https://docs.docker.com/reference/dockerfile
 # https://github.com/BretFisher/node-docker-good-defaults
 # https://github.com/nodejs/docker-node#nodealpine
 
 # dependencies
 # INSTALL DEPENDENCIES
-FROM node:22.14.0-alpine As dependencies
+FROM node:22.14.0-alpine AS dependencies
 
-ARG NODE_ENV production
-
-ENV HUSKY 0
-ENV NODE_ENV $NODE_ENV
+ENV HUSKY=0
 
 WORKDIR /app
 COPY .yarn ./.yarn
 COPY .yarnrc.yml ./.yarnrc.yml
 COPY package.json ./package.json
 COPY yarn.lock ./yarn.lock
-RUN yarn
-ENV PATH /app/node_modules/.bin:$PATH
+RUN yarn workspaces focus --production
+ENV PATH=/app/node_modules/.bin:$PATH
 
 # code
-# COPY SOURCE CODE
-FROM dependencies As code
+# COPY SERVER CODE
+FROM dependencies AS code
 
 WORKDIR /app
 COPY src ./src
-COPY tsconfig.json ./tsconfig.json
+
+# runner
+# RUN SERVER
+FROM node:22.14.0-alpine AS runner
+
+ENV HOST=0.0.0.0
+ENV HOSTNAME=localhost
+ENV NODE_ENV=production
+ENV PORT=4000
+
+WORKDIR /app
+COPY --from=code /app/src ./src
+COPY --from=dependencies /app/node_modules ./node_modules
+COPY --from=dependencies /app/package.json ./package.json
+EXPOSE $PORT 9229
+ENV PATH=/app/node_modules/.bin:$PATH
+CMD ["bun", "run", "./src/main.mts"]

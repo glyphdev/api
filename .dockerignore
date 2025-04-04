@@ -1,0 +1,33 @@
+# DOCKER IGNORE
+# https://docs.docker.com/engine/reference/builder#dockerignore-file
+
+# macos
+# ------------------------------------------------------------------------------
+.DS_*
+._*
+
+# npm
+# ------------------------------------------------------------------------------
+**/.npmignore
+
+# testing
+# ------------------------------------------------------------------------------
+**/__mocks__/
+**/__snapshots__/
+**/__tests__/
+
+# types
+# ------------------------------------------------------------------------------
+**/*.d.mts
+**/interfaces/
+**/types/
+src/types.mts
+
+# yarn
+# https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+# ------------------------------------------------------------------------------
+.yarn/*
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

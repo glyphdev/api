@@ -1,0 +1,30 @@
+# DOCKER COMPOSE (DEVELOPMENT)
+# https://docs.docker.com/compose/compose-file
+# https://github.com/BretFisher/node-docker-good-defaults
+
+name: glyph
+
+services:
+  api:
+    container_name: api
+    image: ghcr.io/glyphdev/api:dev
+    build:
+      target: code
+    command: bun run --watch ./src/main.mts
+    environment:
+      DOCKER: 1
+      HOST: 0.0.0.0
+      NEST_DEBUG: 1
+      NODE_ENV: development
+      PORT: ${PORT}
+    hostname: localhost
+    ports:
+      - ${PORT}:${PORT}
+      - 9229:9229
+    pull_policy: build
+    restart: always
+    tty: true
+    volumes:
+      - ./package.json:/app/package.json
+      - ./src:/app/src
+    working_dir: /app
