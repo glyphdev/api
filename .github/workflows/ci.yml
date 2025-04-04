@@ -368,16 +368,24 @@ jobs:
       - id: metadata
         name: Extract container image metadata
         uses: docker/metadata-action@v5.7.0
+        env:
+          MAINTAINER: ${{ format('@{0}', github.actor) }}
+          VERSION: ${{ format('{0}+{1}', needs.preflight.outputs.version, env.SHA) }}
         with:
           flavor: latest=false
           images: ghcr.io/${{ github.repository }}
           labels: |
-            maintainer=${{ github.actor }}
-            org.opencontainers.image.title=${{ github.repository }}
+            maintainer=${{ env.MAINTAINER }}
+            org.opencontainers.image.authors=${{ env.MAINTAINER }}
+            org.opencontainers.image.revision=${{ env.SHA }}
+            org.opencontainers.image.title=${{ format('@{0}', github.repository) }}
             org.opencontainers.image.vendor=${{ github.repository_owner }}
+            org.opencontainers.image.version=${{ env.VERSION }}
           tags: |
-            edge
             type=edge,branch=${{ github.ref_name }}
+            type=raw,value=edge
+            type=raw,value=${{ env.VERSION }}
+            type=ref,event=${{ github.event_name == 'pull_request' && 'pr' || 'branch' }}
             type=sha,prefix=,format=long
             type=sha,prefix=edge-
             type=sha,prefix=
