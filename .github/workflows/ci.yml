@@ -381,6 +381,12 @@ jobs:
             type=sha,prefix=,format=long
             type=sha,prefix=edge-
             type=sha,prefix=
+      - id: validate
+        name: Validate build configuration
+        uses: docker/build-push-action@v6.15.0
+        with:
+          call: check
+          context: .
       - id: build-push
         name: Build and push container image
         uses: docker/build-push-action@v6.15.0
