@@ -21,9 +21,9 @@ branches:
         required_approving_review_count: 1
       required_status_checks:
         checks:
+          - context: artifacts
           - context: auto-merge
           - context: auto-review
-          - context: build
           - context: changelog
           - context: commitlint
           - context: dependabot-dedupe
@@ -158,7 +158,7 @@ repository:
   has_wiki: false
   homepage: https://github.com/glyphdev/api
   is_template: false
-  private: false
+  private: true
   security_and_analysis:
     secret_scanning:
       status: enabled
