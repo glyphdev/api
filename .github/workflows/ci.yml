@@ -304,7 +304,12 @@ jobs:
   artifacts:
     needs:
       - commitlint
+      - format
+      - lint
       - preflight
+      - spelling
+      - test
+      - typescript
     runs-on: ubuntu-latest
     env:
       TARFILE: |
