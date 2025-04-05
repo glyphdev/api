@@ -30,6 +30,10 @@ updates:
         patterns:
           - '@eslint/js'
           - eslint
+      eslint-mdx:
+        patterns:
+          - eslint-mdx
+          - eslint-plugin-mdx
       fastify:
         patterns:
           - '@fastify/*'
