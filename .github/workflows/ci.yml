@@ -452,6 +452,7 @@ jobs:
         name: Build and push container image
         uses: docker/build-push-action@v6.15.0
         with:
+          annotations: ${{ steps.metadata.outputs.annotations }}
           build-args: |
             NEST_DEBUG=1
           context: .
