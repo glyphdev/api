@@ -1946,7 +1946,7 @@ __metadata:
     "@nestjs/config": "npm:4.0.2"
     "@nestjs/core": "npm:11.0.15"
     "@nestjs/platform-fastify": "npm:11.0.15"
-    "@nestjs/swagger": "npm:11.1.1"
+    "@nestjs/swagger": "npm:11.1.2"
     "@nestjs/testing": "npm:11.0.15"
     "@stylistic/eslint-plugin": "npm:4.2.0"
     "@tsconfig/strictest": "npm:2.0.5"
@@ -2355,16 +2355,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/swagger@npm:11.1.1":
-  version: 11.1.1
-  resolution: "@nestjs/swagger@npm:11.1.1"
+"@nestjs/swagger@npm:11.1.2":
+  version: 11.1.2
+  resolution: "@nestjs/swagger@npm:11.1.2"
   dependencies:
     "@microsoft/tsdoc": "npm:0.15.1"
     "@nestjs/mapped-types": "npm:2.1.0"
     js-yaml: "npm:4.1.0"
     lodash: "npm:4.17.21"
     path-to-regexp: "npm:8.2.0"
-    swagger-ui-dist: "npm:5.20.5"
+    swagger-ui-dist: "npm:5.20.8"
   peerDependencies:
     "@fastify/static": ^8.0.0
     "@nestjs/common": ^11.0.1
@@ -2379,7 +2379,7 @@ __metadata:
       optional: true
     class-validator:
       optional: true
-  checksum: 10/659976579030f8d6fbce93ed4da9aa1f7047c218146bcd44725e5e36a7565a681e531392be8f1eccf36b4713af954b96623ac1576533aacee100c92ec495feb3
+  checksum: 10/a22e9013c7122c5396b9781907d4010cdd600e0fef27f5e3508d1febbb7dbbbc7483f4a99d5d98b4b474bbe83793a988ce01fc59d3d4ab3ab5eb6a8feca027b4
   languageName: node
   linkType: hard
 
@@ -11396,12 +11396,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swagger-ui-dist@npm:5.20.5":
-  version: 5.20.5
-  resolution: "swagger-ui-dist@npm:5.20.5"
+"swagger-ui-dist@npm:5.20.8":
+  version: 5.20.8
+  resolution: "swagger-ui-dist@npm:5.20.8"
   dependencies:
     "@scarf/scarf": "npm:=1.4.0"
-  checksum: 10/4994ef4195692567801a432dbb7753beb72e4fc0d94a45b3f9a9e7526eb1b13bb1cd7e7e2ecdf47d7a039be208b2049f996f705f7c189756ae0ad5410859871e
+  checksum: 10/4ab697c8437ef6ea51ad773141e75ce6345d570031488f1e2a9ffd0a0cc03b743a504ff22cd51b3a1a493de7ca12cf52d5d8b4f6c41618a985e36791a133ae1a
   languageName: node
   linkType: hard
 
